@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body {
+    background-color: #f5f5f5; /* Fondo claro para imitar un entorno de madera */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #dcdcdc; /* Fondo gris claro para contraste */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+    padding: 15px;
+    max-width: 360px;
+    width: 100%;
+    background-image: url('assets/wood_texture.jpg'); /* Textura de madera */
+    background-size: cover;
+    background-blend-mode: multiply; /* Mezcla de color para una textura más natural */
+}
+
+.song-info {
+    background: rgba(139, 69, 19, 0.8); /* Color madera semi-translúcido */
+    padding: 18px;
+    border-radius: 10px;
+    color: #f0f0f0;
+    text-align: center;
+    width: 85%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra interna para profundidad */
+}
+
+.song-info .song-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+    height: 15px;
+}
+
+.song-info .artist-name {
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 18px;
+    height: 15px;
+}
+
+.song-info .progress-bar {
+    background-color: #8b4513; /* Color madera más oscuro para la barra */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    height: 2px;
+    position: relative;
+    width: 100%;
+}
+
+.song-info .progress-bar .fill-bar {
+    height: 100%;
+    border-radius: 5px;
+    background: #deb887; /* Color madera claro para la barra de progreso */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.song-info .time {
+    font-size: 13px;
+    color: #b0b0b0;
+    margin-top: 10px;
+}
+
+.disk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    perspective: 1000px; /* Añade perspectiva para el efecto 3D */
+}
+
+.disk .cover {
+    width: 100%;
+    height: 100%;
+    background: url(assets/record_texture.jpg) no-repeat center center; /* Textura para el disco */
+    background-size: cover;
+    border-radius: 50%;
+    border: 4px solid #8b4513; /* Borde color madera */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    animation: rotate 8s linear infinite;
+    transition: transform 0.3s ease; /* Suaviza la transición del efecto de aumento */
+}
+
+.disk .cover:hover {
+    transform: scale(1.2) translateZ(15px); /* Agranda y desplaza hacia adelante */
+}
+
+.disk .circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background: rgba(139, 69, 19, 0.9); /* Color madera oscuro */
+    width: 90%;
+    max-width: 400px;
+    height: 65px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.controls i {
+    padding: 10px;
+    font-size: 26px;
+    color: #f5f5f5; /* Color claro para los iconos */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.controls i:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.controls #play {
+    background-color: #deb887; /* Color madera claro para el botón */
+    color: #8b4513; /* Color madera oscuro para el texto */
+    padding: 12px;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.controls #play:hover {
+    background: #d2b48c; /* Color madera ligeramente más claro al pasar el cursor */
+    transform: scale(1.1);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
